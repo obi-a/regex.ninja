@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Regex Ninja</title>
@@ -11,8 +11,15 @@
     <script src="/javascripts/libs/backbone-min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            Regex Ninja
+          </a>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
   </body>
 </html>
