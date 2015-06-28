@@ -20,13 +20,22 @@ var RegExInputView = Backbone.View.extend({
     'click input[type=button]': 'addRegEx'
   },
   addRegEx: function() {
+    var value = this.regexInputEle.val();
+    if( value.length > 0) {
+      this.collection.add({
+        expression: value
+      });
+     console.log(this.collection);
+    }
     console.log("i was called");
   }
 });
 
 
-
 $(function() {
-  var regexInputView = new RegExInputView({});
+  var regularExpressions = new RegularExpressions();
+  var regexInputView = new RegExInputView({
+    collection: regularExpressions
+  });
   console.log("we are ready");
 });
