@@ -1,12 +1,16 @@
 var TextView = Backbone.View.extend({
   initialize: function(){
     this.textInputEle = this.$el.find('textarea');
+    this.textBodyEle = this.$el.find('.panel-body');
   },
   events: {
-    'keypress textarea': 'updateText'
+    'keyup textarea': 'updateText'
   },
   updateText: function() {
     this.model.plainText = this.textInputEle.val();
-    console.log(this.model.plainText);
+    this.render();
+  },
+  render: function() {
+    this.textBodyEle.html( this.model.searchText() );
   }
 });
