@@ -25,9 +25,7 @@ var RegExInputView = Backbone.View.extend({
       this.collection.add({
         expression: value
       });
-     console.log(this.collection);
     }
-    console.log("i was called");
   }
 });
 
