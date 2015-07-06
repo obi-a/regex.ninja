@@ -2,9 +2,14 @@
   <div class="row-fluid">
     <div class="col-xs-2 col-lg-2 col-sm-2">
       <!--Sidebar content-->
-      Previous Searches
+      <div>Previous Searches</div>
+      <span id="regexs"></span>
+      <script id="regex-template" type="text/template">
+        {{ _.each(regexs, function(regex){ }}
+          <div>{{= regex.expression  }}</div>
+        {{  });  }}
+      </script>
     </div>
-
     <div class="col-xs-10 col-lg-10 col-sm-10">
       <div class="panel panel-default">
         <div class="panel-body">
