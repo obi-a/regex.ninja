@@ -6,7 +6,7 @@
       <span id="regexs"></span>
       <script id="regex-template" type="text/template">
         {{ _.each(regexs, function(regex){ }}
-          <div>{{= regex.expression  }}</div>
+          <div><a cid="{{= regex.cid }}">{{= regex.expression  }}</a><span cid="{{= regex.cid }}" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
         {{  });  }}
       </script>
     </div>
