@@ -13,7 +13,9 @@ var RegExCollectionView = Backbone.View.extend({
     'click span': 'removeRegex'
   },
   applyRegex: function(e) {
-   console.log( $(e.currentTarget).attr("cid") );
+    var cid = $(e.currentTarget).attr("cid");
+    var model = this.collection.get({cid: cid});
+    this.trigger('regex:addFromCollection', model.get("expression"));
   },
   removeRegex: function(e) {
     var cid = $(e.currentTarget).attr("cid");

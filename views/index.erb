@@ -2,12 +2,16 @@
   <div class="row-fluid">
     <div class="col-xs-2 col-lg-2 col-sm-2">
       <!--Sidebar content-->
-      <div>Previous Searches</div>
+      <div>Saved Expressions:</div>
       <span id="regexs"></span>
       <script id="regex-template" type="text/template">
-        {{ _.each(regexs, function(regex){ }}
-          <div><a cid="{{= regex.cid }}">{{= regex.expression  }}</a><span cid="{{= regex.cid }}" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
-        {{  });  }}
+        {{ if( _.size(regexs) > 0 ){ }}
+          {{ regexs.forEach( function(regex){ }}
+            <div><a class="link" cid="{{= regex.cid }}">{{= regex.expression  }}</a><span cid="{{= regex.cid }}" class="link glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+          {{  });  }}
+        {{ } else {   }}
+          <div class="placeholder">No saved expressions</div>
+        {{ } }}
       </script>
     </div>
     <div class="col-xs-10 col-lg-10 col-sm-10">
@@ -26,11 +30,11 @@
           </section>
           <section id="regex-input-section">
             <div class="form-group">
-              <label>Enter regular expression to search text</label>
+              <label>Enter regular expression to match with text above</label>
               <input id="regex-input" type="text" class="form-control">
             </div>
             <div class="form-group">
-              <input id="regex-btn" class="btn btn-default" type="button" value="Search">
+              <input id="regex-btn" class="btn btn-default" type="button" value="Save">
             </div>
           </section>
         </div>

@@ -2,4 +2,19 @@
   white-space: pre-wrap;
   padding-top: 0px;
   padding-bottom: 0px;
+  background-color: #001900;
+  color: white;
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
+}
+
+.placeholder {
+  color: #999;
+}
+
+.link {
+  cursor: pointer;
 }

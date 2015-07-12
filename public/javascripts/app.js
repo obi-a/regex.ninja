@@ -1,5 +1,6 @@
 $(function() {
   var text = new Text();
+
   var regularExpressions = new RegularExpressions();
 
   var regexInputView = new RegExInputView({
@@ -17,5 +18,16 @@ $(function() {
     model: text
   });
 
-  console.log("we are ready");
+  regexCollectionView.render();
+
+  textView.listenTo(regexInputView, 'regex:addnew', function( expression ){
+    text.set("regex", expression);
+    textView.render();
+  });
+
+  textView.listenTo(regexCollectionView, 'regex:addFromCollection', function(expression){
+    text.set("regex", expression);
+    textView.render();
+    $('#regex-input').val(expression);
+  });
 });

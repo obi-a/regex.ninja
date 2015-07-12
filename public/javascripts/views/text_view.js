@@ -7,7 +7,7 @@ var TextView = Backbone.View.extend({
     'keyup textarea': 'updateText'
   },
   updateText: function() {
-    this.model.plainText = this.textInputEle.val();
+    this.model.set("plainText", this.textInputEle.val() );
     this.render();
   },
   render: function() {
