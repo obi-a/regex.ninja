@@ -7,8 +7,20 @@
 }
 
 .highlight {
-  background-color: yellow;
-  color: black;
+  /*background-color: yellow;
+  color: black;*/
+
+    border-radius: 25px;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+
+
+    background: yellow;
+    border: 2px solid #666;
+    color: black;
+    text-align: center;
+
+    /*font: 32px Arial, sans-serif;*/
 }
 
 .placeholder {
