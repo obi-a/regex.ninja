@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require underscore-min
 //= require backbone-min
+//= require bootstrap.min
 //= require_tree ./views
 //= require_tree ./models
 //= require_tree ./collections
