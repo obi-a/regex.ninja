@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expression:</strong>
+  <%= @regex.expression %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @regex.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @regex.user %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @regex.text %>
+</p>
+
+<%= link_to 'Edit', edit_regex_path(@regex) %> |
+<%= link_to 'Back', regexes_path %>

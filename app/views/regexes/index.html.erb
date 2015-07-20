@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Regexes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expression</th>
+      <th>Title</th>
+      <th>User</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @regexes.each do |regex| %>
+      <tr>
+        <td><%= regex.expression %></td>
+        <td><%= regex.title %></td>
+        <td><%= regex.user %></td>
+        <td><%= regex.text %></td>
+        <td><%= link_to 'Show', regex %></td>
+        <td><%= link_to 'Edit', edit_regex_path(regex) %></td>
+        <td><%= link_to 'Destroy', regex, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Regex', new_regex_path %>
