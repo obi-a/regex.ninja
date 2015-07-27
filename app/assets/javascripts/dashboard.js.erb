@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$(function() {
+function initialize() {
   var text = new Text();
 
   var regularExpressions = new RegularExpressions();
@@ -32,4 +32,7 @@ $(function() {
     textView.render();
     $('#regex-input').val(expression);
   });
-});
+}
+
+$(document).ready(initialize);
+$(document).on('page:load', initialize);
