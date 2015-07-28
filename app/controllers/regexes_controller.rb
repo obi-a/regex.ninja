@@ -1,10 +1,11 @@
 class RegexesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_regex, only: [:show, :edit, :update, :destroy]
 
   # GET /regexes
   # GET /regexes.json
   def index
-    @regexes = Regex.all
+    @regexes = Regex.where(user: current_user)
   end
 
   # GET /regexes/1
@@ -25,6 +26,7 @@ class RegexesController < ApplicationController
   # POST /regexes.json
   def create
     @regex = Regex.new(regex_params)
+    #current_user.regexes << @regex
 
     respond_to do |format|
       if @regex.save
