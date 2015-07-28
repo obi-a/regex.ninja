@@ -7,6 +7,7 @@ var RegExCollectionView = Backbone.View.extend({
     this.listenTo(this.collection, 'add', this.render);
     this.listenTo(this.collection, 'remove', this.render);
     this.template = _.template( $("#regex-template").html() );
+    this.render();
   },
   events: {
     'click a': 'applyRegex',

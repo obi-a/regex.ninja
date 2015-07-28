@@ -5,6 +5,8 @@ function initialize() {
 
   var regularExpressions = new RegularExpressions();
 
+  regularExpressions.fetch({});
+
   var regexInputView = new RegExInputView({
     collection: regularExpressions,
     el: '#regex-input-section'
